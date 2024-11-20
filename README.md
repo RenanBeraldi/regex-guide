@@ -125,7 +125,7 @@ do índice indicado pela propriedade `lastIndex` do objeto `RegExp`.
 
 ---
 
-### Algumas regex comuns
+### Alguns regex comuns
 
 <strong>Exemplo de prompt para ChatGPT:</strong>  
 Elabore uma regex para telefone no padrão do Brasil. Explique o padrão adotado.
@@ -149,6 +149,23 @@ CEP brasileiro
 
 Data no formato aaaa-mm-dd (simplificada)  
 `/^\d{4}-\d{2}-\d{2}$/`
+
+Data no formato dd/mm/aaaa (com validação de dia entre 1 e 31, e mês de 1 a 12,
+podendo ou não ter zero à esquerda dos valores menores que 10)  
+`/^(0?[1-9]|[12][0-9]|3[01])\/(0?[1-9]|1[012])\/(19|20)\d\d$/`
+
+Senha “forte” (pelo menos 8 caracteres, com pelo menos uma letra maiúscula, uma
+minúscula, um número e um caractere especial)  
+`/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/`
+
+Número inteiro  
+`/^[-+]?\d+$/`
+
+Número de ponto flutuante  
+`/^[-+]?\d*\.?\d+$/`
+
+IPv4  
+`/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/`
 
 <br>
 
